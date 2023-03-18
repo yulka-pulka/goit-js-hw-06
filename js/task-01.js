@@ -1,10 +1,13 @@
-const categoriesList = document.querySelector("#categories");
+const categoriesList = document.getElementById("categories");
 const categoriesItems = categoriesList.querySelectorAll(".item");
 
-console.log(`Number of categories: ${categoriesItems.length}`);
+// Порахуємо кількість категорій
+console.log(`В списку ${categoriesItems.length} категорій`);
 
-categoriesItems.forEach(item => {
-  const categoryTitle = item.querySelector("h2").textContent;
-  const categoryItemsCount = item.querySelectorAll("li").length;
-  console.log(`Category: ${categoryTitle}\nItems count: ${categoryItemsCount}`);
+// Пройдемось по кожному елементу li.item у списку і виведемо текст заголовку і кількість елементів в категорії
+categoriesItems.forEach((item) => {
+  const title = item.querySelector("h2").textContent;
+  const count = item.querySelector("ul").childElementCount;
+
+  console.log(`Категорія: ${title}, Кількість елементів: ${count}`);
 });
